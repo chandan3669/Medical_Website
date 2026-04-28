@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-textPrimary bg-accent font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+
+  /* Accessibility Focus Rings */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-surfaceStrong ring-offset-2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-surfaceRaised text-textInverse px-6 py-3 rounded-xs font-medium 
+           transition-all duration-300 ease-in-out hover:bg-surfaceStrong 
+           active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-surfaceRaised;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-textPrimary border-2 border-textPrimary px-6 py-3 rounded-xs font-medium 
+           transition-all duration-300 ease-in-out hover:bg-textPrimary hover:text-textInverse 
+           active:scale-[0.98];
+  }
+}
